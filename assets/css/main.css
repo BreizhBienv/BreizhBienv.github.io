@@ -165,7 +165,6 @@ input, select, textarea {
     justify-content: center;
     align-items: center;
 	background: #348cb2;
-	overflow-x: hidden;
 }
 /* #Projects::after
 	{
@@ -178,7 +177,7 @@ input, select, textarea {
 		z-index: 0;
 	} */
 
-#projects .title
+#projects .titre
 {
 	position: relative;
     justify-content: center;
@@ -186,7 +185,7 @@ input, select, textarea {
 	padding-bottom: 40px;
 }
 
-#projects .title h3
+#projects .titre h3
 {
 	font-size: 3em;
 	font-weight: bold;
