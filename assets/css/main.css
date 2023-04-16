@@ -165,6 +165,7 @@ input, select, textarea {
     justify-content: center;
     align-items: center;
 	background: #348cb2;
+	overflow-x: hidden;
 }
 /* #Projects::after
 	{
@@ -419,6 +420,7 @@ input, select, textarea {
 		opacity: 1;
 		position: relative;
 		top: 0;
+		z-index: -5;
 	}
 
 	@-moz-keyframes bg {
