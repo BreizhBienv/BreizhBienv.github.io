@@ -26,6 +26,7 @@ closeModalinputs.forEach(button => {
 function openModal(modal)
 {
     if (modal == null) return
+    modal.classList.add('show')
     modal.classList.add('active')
     blackened.classList.add('active')
 }
@@ -33,6 +34,7 @@ function openModal(modal)
 function closeModal(modal)
 {
     if (modal == null) return
+    modal.classList.remove('show')
     modal.classList.remove('active')
     blackened.classList.remove('active')
 }

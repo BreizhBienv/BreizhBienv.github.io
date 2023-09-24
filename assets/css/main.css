@@ -215,6 +215,10 @@ input, select, textarea {
 {
 	max-width: 100%;
 	height: auto;
+	width: 600px;
+	aspect-ratio: auto 600 / 338;
+	overflow-clip-margin: content-box;
+    overflow: clip;
 	filter: grayscale(100%);
 	transition: 0.5s ease;
 }
@@ -228,22 +232,91 @@ input, select, textarea {
 .modal
 {
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	transition: 200ms ease-in-out;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+    pointer-events: none;
+}
+
+.fade
+{
+	opacity: 0;
+    transition: opacity 200ms linear;
+}
+
+.fade.show
+{
+	opacity: 1;
+	display: block;
+}
+
+.modal-container
+{
+	position: relative;
+    width: auto;
+    margin: 0.5rem;
+}
+
+.modal.fade .modal-container
+{
+	/* transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+    -webkit-transform: translate(0,-25%);
+    transform: translate(0,-25%); */
+
+}
+
+.fade.show .modal-container
+{
+	-webkit-transform: translate(0,0);
+    transform: translate(0,0);
+}
+
+.modal-container-centered
+{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: calc(100% - (0.5rem * 2));
+}
+
+@media (min-width: 576px)
+{
+	.modal-container {
+		max-width: 500px;
+		margin: 1.75rem auto;
+	}
+
+	
+	.modal-container-centered {
+		min-height: calc(100% - (1.75rem * 2));
+	}
+}
+
+.modal-content
+{
+	position: relative;
 	border: 1px solid black;
 	border-radius: 10px;
-	z-index: 10;
 	background-color: whitesmoke;
 	color: black;
-	width: 500px;
-	max-width: 80%;
+	width: 100%;
+	pointer-events: auto;
 }
 
 .modal.active
 {
-	transform: translate(-50%, -50%) scale(1);
+	overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .modal-header
